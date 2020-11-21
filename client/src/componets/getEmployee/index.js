@@ -20,6 +20,9 @@ function  GetEmployee(props) {
          {mappedCountries.map( employee => <option>{employee}</option>)}
         </select>
       </div>
+      <div>
+        <button onClick = {props.sortYears}>Sort by Seniority</button>
+      </div>
       <h1>Employee List:</h1>
       <ul>
         {props.employeeList.map(employee => {
