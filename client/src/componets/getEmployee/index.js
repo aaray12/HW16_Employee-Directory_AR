@@ -1,7 +1,17 @@
-import React, { Component } from "react";
-import employeeFormat from "../employeeFormat"
+import React from "react";
+import EmployeeFormat from "../employeeFormat"
 
-function  getEmployee(props) {
- 
+function  GetEmployee(props) {
+  console.log(props)
+  return (
+    <React.Fragment>
+      <h1>test{props.employees[0].email}</h1>
+      <ul>
+        <li>
+          <EmployeeFormat employee = {props.employees[0]}></EmployeeFormat>
+        </li>
+      </ul>
+    </React.Fragment>
+  )
 }
-export default getEmployee;
+export default GetEmployee;

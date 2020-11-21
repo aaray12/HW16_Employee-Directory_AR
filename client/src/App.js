@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import './App.css';
-import getEmployee from "./componets/getEmployee"
+import GetEmployee from "./componets/getEmployee"
 import employees from "./employees.json"
 
-class App extends Componet {
-  stste = {
+class App extends Component {
+  state = {
     "employees": employees,
   }
   render(){
-    return <getEmployee emplyees = {this.state.employees}/>
+    return (<GetEmployee employees = {this.state.employees}/>)
   }
 }
 
