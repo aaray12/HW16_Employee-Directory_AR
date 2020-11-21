@@ -5,11 +5,14 @@ function  GetEmployee(props) {
   console.log(props)
   return (
     <React.Fragment>
-      <h1>test{props.employees[0].email}</h1>
+      <h1>Employee List:</h1>
       <ul>
-        <li>
-          <EmployeeFormat employee = {props.employees[0]}></EmployeeFormat>
-        </li>
+        {props.employees.map(employee => {
+          return( <li>
+            <EmployeeFormat employee = {employee} ></EmployeeFormat>
+           </li>)
+        })
+       }
       </ul>
     </React.Fragment>
   )
