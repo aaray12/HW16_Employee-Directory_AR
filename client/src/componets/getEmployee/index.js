@@ -1,6 +1,17 @@
 import React from "react";
 import EmployeeFormat from "../employeeFormat"
-
+const styles = {
+  ul:{
+    listStyleType: "none",
+    textAlign: "center", 
+  },
+  li:{
+    borderStyle: "ridge",
+    width: "500px",
+    float: "left",
+    margin: "20px"
+  }
+}
 function  GetEmployee(props) {
   console.log(props)
   //return all employee's countries to an array sorted alphabetically
@@ -13,25 +24,25 @@ function  GetEmployee(props) {
   //  props.employees = props.employees.filter( employee => employee.location.country === )
   return (
     <React.Fragment>
-      <div>
+      <div style = {styles.ul}>
       Select Country 
         <select class="form-control" id = "country" onChange ={e => props.switchCountry(e.target.value)}>
           <option>All</option>
          {mappedCountries.map( employee => <option>{employee}</option>)}
         </select>
-      </div>
-      <div>
         <button onClick = {props.sortYears}>Sort by Seniority</button>
       </div>
-      <h1>Employee List:</h1>
-      <ul>
-        {props.employeeList.map(employee => {
-          return( <li>
-            <EmployeeFormat employee = {employee} ></EmployeeFormat>
-           </li>)
-        })
-       }
-      </ul>
+      <div style = {styles.ul}>
+        <h1>Employee List:</h1>
+        <ul style = {styles.ul}>
+          {props.employeeList.map(employee => {
+            return( <li style ={ styles.li}>
+              <EmployeeFormat employee = {employee} ></EmployeeFormat>
+            </li>)
+          })
+        }
+        </ul>
+      </div>
     </React.Fragment>
   )
 }
